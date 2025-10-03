@@ -25,8 +25,7 @@ db.exec(`
 
 export default db
 
-/*
-Explications importantes :
+/*Explications importantes :
 
 1. AUTOINCREMENT : dans SQLite, mettre "INTEGER PRIMARY KEY" suffit généralement pour incrémenter automatiquement.
    "AUTOINCREMENT" garantit que les IDs ne seront jamais réutilisés après suppression.
