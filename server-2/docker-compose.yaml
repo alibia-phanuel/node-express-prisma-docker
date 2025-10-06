@@ -1,0 +1,28 @@
+version: "3"
+services:
+  server-2:
+    build: .
+    container_name: todo-app-server-2
+    env_file:
+      - .env
+    ports:
+      - "5003:5003"
+    depends_on:
+      - db
+    volumes:
+      - ./server-2:/usr/src/app
+
+  db:
+    image: postgres:13-alpine
+    container_name: todo-app-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=todoapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:

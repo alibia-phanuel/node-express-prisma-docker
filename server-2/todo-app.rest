@@ -1,0 +1,51 @@
+## GET /
+GET http://localhost:5000
+
+
+### REGISTER user POST /AUTH/REGISTER
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "phanuel.alibiaas@gmail.com",
+    "password": "qwety2001"
+}
+
+
+### LOGIN user POST /AUTH/LOGIN
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "phanuel.alibiaas@gmail.com",
+    "password": "qwety2001"
+}
+
+###
+GET http://localhost:5000/api/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJwaGFudWVsLmFsaWJpYWFzQGdtYWlsLmNvbSIsImlhdCI6MTc1OTU3Mjc2NywiZXhwIjoxNzU5NTc2MzY3fQ.oLVkQqv-bOR-l-wTMwQW_O93_9xIexXr656zdn17TmY
+
+###
+
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJwaGFudWVsLmFsaWJpYUBnbWFpbC5jb20iLCJpYXQiOjE3NTk1Njg5NzEsImV4cCI6MTc1OTU3MjU3MX0._O_QjF7WYpDI2UWwiCMWaXRVlsYcT8d9gZbPtZFNuOY
+
+{
+    "task": "Apprendre Express",
+    "id": 1
+}
+
+###
+PUT http://localhost:5000/api/todos/2
+Content-Type: application/json
+Authorization: Bearer <TON_JWT_ICI>
+
+{
+    "task": "Apprendre Express + JWT",
+    "complete": 1
+}
+
+###
+DELETE http://localhost:5000/api/todos/2
+Authorization: Bearer <TON_JWT_ICI>
